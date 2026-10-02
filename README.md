@@ -118,8 +118,8 @@ cmake -B build -G Ninja
 ninja -C build
 ```
 
-Output: `build/picocalc-tetris-<chip>.uf2` (`<chip>` is `RP2350` or `RP2040`, matching the board), which the build also copies to the
-top-level folder as `picocalc-tetris-RP2350.uf2` or `picocalc-tetris-RP2040.uf2`
+Output: `build/tetris-<chip>.uf2` (`<chip>` is `RP2350` or `RP2040`, matching the board), which the build also copies to the
+top-level folder as `tetris-RP2350.uf2` or `tetris-RP2040.uf2`
 (depending on `-DPICO_BOARD=pico2` / `pico`), so both chips' builds can sit side
 by side. Flash by copying to the `RPI-RP2` drive — hold BOOTSEL on power-up, or
 press `~` (SHIFT + backtick) in the app.
@@ -135,7 +135,7 @@ cmake -S desktop -B build-windows -G Ninja
 ninja -C build-windows
 ```
 
-Output: `picocalc-tetris-Windows.exe` in the top-level folder. SDL2 is linked
+Output: `tetris-Windows.exe` in the top-level folder. SDL2 is linked
 statically, so it is a single file with no `SDL2.dll`. The keys are the same as
 the table above (`~` simply closes the program).
 
@@ -151,4 +151,4 @@ together.
     cmake -S desktop -B build-linux
     cmake --build build-linux
 
-Output: `picocalc-tetris-Linux` and `libSDL2-2.0.so.0` in the top-level folder.
+Output: `tetris-Linux` and `libSDL2-2.0.so.0` in the top-level folder.

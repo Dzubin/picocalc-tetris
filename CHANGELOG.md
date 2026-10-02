@@ -11,6 +11,8 @@ the decompiled Game Boy ROM (see README.md for exactly what was and wasn't
 carried over from that analysis).
 
 ### Added
+- Build outputs are named without the `picocalc-` prefix, since the chip or system
+  at the end of the name already says what they are for: `tetris-RP2040.uf2`, `tetris-RP2350.uf2`, `tetris-Windows.exe` and `tetris-Linux`.
 - Vendored `drivers/fat32.c`: `get_next_free_cluster()` now advances its search
   hint past the cluster it hands out (a local fix, not in upstream), so a long
   sequential write to the SD card no longer re-scans every cluster already given
@@ -34,9 +36,9 @@ carried over from that analysis).
 - Windows build: `desktop/` holds a small SDL2 shim that re-implements the
   picocalc-text-starter driver API (LCD, keyboard, audio) so the same
   `tetris.c` runs on a PC; SDL2 is linked statically, giving one
-  self-contained `picocalc-tetris-Windows.exe`.
+  self-contained `tetris-Windows.exe`.
 - Linux build: the `desktop/` build (formerly `windows/`) now also builds on
-  Linux and produces `picocalc-tetris-Linux`. SDL2 is linked dynamically there and the
+  Linux and produces `tetris-Linux`. SDL2 is linked dynamically there and the
   build copies `libSDL2-2.0.so.0` next to the executable (found through an
   `$ORIGIN` run-path); needs the SDL2 development package (e.g. `libsdl2-dev`).
 - `Q` pauses the game and asks "QUIT GAME?" in a box over the board. `Y`
@@ -50,7 +52,7 @@ carried over from that analysis).
   game: `Y` exits (to the UF2 Loader menu, or closes the window on a PC),
   any other key starts a game.
 - The firmware build now names every output with the chip (the `.uf2`, `.elf`, `.bin` and `.hex` all end in `-RP2040` / `-RP2350`) and copies the `.uf2` to the top-level folder as
-  `picocalc-tetris-RP2040.uf2` / `picocalc-tetris-RP2350.uf2`, so the two
+  `tetris-RP2040.uf2` / `tetris-RP2350.uf2`, so the two
   chips' builds sit side by side.
 
 ### Changed

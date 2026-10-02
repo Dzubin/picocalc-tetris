@@ -81,8 +81,8 @@ target_link_libraries(picocalc-tetris
     hardware_watchdog
 )
 
-# The chip is part of every output file name (picocalc-tetris-RP2040.uf2 /
-# picocalc-tetris-RP2350.uf2, and the matching .elf/.bin/.hex), so a downloaded file
+# The chip is part of every output file name (tetris-RP2040.uf2 /
+# tetris-RP2350.uf2, and the matching .elf/.bin/.hex), so a downloaded file
 # always says which board it was built for.
 if(PICO_PLATFORM MATCHES "^rp2040")
     set(CHIP_NAME RP2040)
@@ -91,7 +91,7 @@ elseif(PICO_PLATFORM MATCHES "^rp2350")
 else()
     set(CHIP_NAME ${PICO_PLATFORM})
 endif()
-set_target_properties(picocalc-tetris PROPERTIES OUTPUT_NAME picocalc-tetris-${CHIP_NAME})
+set_target_properties(picocalc-tetris PROPERTIES OUTPUT_NAME tetris-${CHIP_NAME})
 
 pico_add_extra_outputs(picocalc-tetris)
 
