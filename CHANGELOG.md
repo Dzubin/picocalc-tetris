@@ -43,8 +43,7 @@ carried over from that analysis).
   `$ORIGIN` run-path); needs the SDL2 development package (e.g. `libsdl2-dev`).
 - `Q` pauses the game and asks "QUIT GAME?" in a box over the board. `Y`
   exits the program: on the PicoCalc it returns to the UF2 Loader menu (the
-  same hand-over through the watchdog scratch registers that
-  picocalc-platformer and PicoCalc-SD-Drive use, identical on RP2040 and
+  hand-over goes through the watchdog scratch registers, identical on RP2040 and
   RP2350); on Windows and Linux it closes the window. Any other key resumes
   play. The `desktop/` shim gained a stand-in for the watchdog scratch
   registers so `tetris.c` still compiles there unchanged.
